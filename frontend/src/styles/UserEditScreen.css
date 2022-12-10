@@ -1,0 +1,19 @@
+.userUpdate {
+  height: 100vh;
+  margin-top: 25px;
+  margin-left: 50px;
+  margin-right: 50px;
+}
+
+.btn__userUpdate {
+  background: #265cb0;
+  padding: 10px;
+  color: white;
+}
+
+.btn__userUpdate:hover {
+  background: #1e4a8d;
+  color: white;
+  padding: 10px;
+  cursor: pointer;
+}

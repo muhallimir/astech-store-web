@@ -1,0 +1,7 @@
+.rating__rate span {
+  color: #f0c040;
+  margin: 0.1rem;
+}
+.rating__rate span:last-child {
+  color: #404040;
+}

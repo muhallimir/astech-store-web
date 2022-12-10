@@ -1,0 +1,30 @@
+.purchaseHistory {
+  min-height: 100vh;
+  margin-left: 200px;
+  margin-right: 200px;
+  overflow-y: scroll;
+  background-color: white;
+}
+.purchaseHistory__Container {
+  margin-top: 50px;
+}
+
+.purchaseHistory__title {
+  margin-bottom: 20px;
+}
+
+@media screen and (max-width: 480px) {
+  .purchaseHistory {
+    min-height: 100vh;
+    margin-left: 5px;
+    margin-right: 5px;
+    overflow-y: scroll;
+  }
+  .purchaseHistory__Container {
+    margin-top: 50px;
+  }
+
+  .purchaseHistory__title {
+    margin-bottom: 20px;
+  }
+}

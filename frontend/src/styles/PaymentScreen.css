@@ -1,0 +1,23 @@
+.payment__container {
+  height: 100vh;
+  margin-left: 50px !important;
+  margin-right: 50px !important;
+}
+
+.btn__continue {
+  background: #265cb0;
+  padding: 10px;
+  margin-left: 15px;
+  color: white;
+}
+
+.btn__continue:hover {
+  background: #1e4a8d;
+  color: white;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.radio__input:hover {
+  cursor: pointer;
+}

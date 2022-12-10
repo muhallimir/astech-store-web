@@ -1,0 +1,31 @@
+.order__list {
+  min-height: 100vh;
+  margin-left: 200px;
+  margin-right: 200px;
+  overflow-y: scroll;
+}
+.order__list--container {
+  margin-top: 50px;
+}
+
+.order__list--title {
+  margin-bottom: 20px;
+}
+
+@media screen and (max-width: 480px) {
+  .order__list {
+    min-height: 100vh;
+    margin-left: 5px;
+    margin-right: 5px;
+    width: 400px;
+    overflow-y: scroll;
+    background-color: white;
+  }
+  .order__list--container {
+    margin-top: 15px;
+  }
+
+  .order__list--title {
+    margin-bottom: 20px;
+  }
+}

@@ -1,0 +1,129 @@
+body {
+  background-color: rgb(234, 237, 237);
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+a:-webkit-any-link {
+  text-decoration: none;
+}
+
+/* Alert */
+.loading {
+  display: block !important;
+}
+.success {
+  color: #20a020;
+}
+.danger {
+  color: #a02020;
+}
+.alert {
+  padding: 1rem;
+  border: 0.1rem solid transparent;
+  border-radius: 0.5rem;
+}
+.alert-info {
+  color: #2020a0;
+  background-color: #e0e0ff;
+}
+.alert-danger {
+  color: #a02020;
+  background-color: #ffe0e0;
+}
+.alert-success {
+  color: #20a020;
+  background-color: #eeffe0;
+}
+
+/* Table */
+.table {
+  width: 100%;
+  border-style: inset;
+  border-color: gray;
+  border-collapse: initial;
+  font-size: x-large;
+}
+.table tbody tr:nth-of-type(odd) {
+  background-color: #f4f4f4;
+}
+.table td,
+.table th {
+  text-align: left;
+  border: 0.1rem solid #e4e4e4;
+  padding: 0.5rem;
+  background: #265cb0;
+  color: white;
+}
+.table button {
+  margin: 0 0.2rem;
+  background: #183b71;
+  border-color: #183b71 #132f5a #1e4a8d;
+  color: white;
+}
+
+/* Dashboard */
+
+.summary > li {
+  border: 0.1rem #c0c0c0 solid;
+  margin: 2rem;
+  border-radius: 0.5rem;
+  flex: 1 1 20rem;
+}
+.summary-title {
+  font-size: 2rem;
+  padding: 1rem;
+}
+.summary-body {
+  font-size: 4rem;
+  padding: 1rem;
+  text-align: center;
+}
+
+.summary-title.color1 {
+  background-color: #f0e0e0;
+}
+.summary-title.color2 {
+  background-color: #e0f0e0;
+}
+.summary-title.color3 {
+  background-color: #e0e0f0;
+}
+
+@media screen and (max-width: 480px) {
+  .table {
+    width: 100%;
+    border-style: groove;
+    border-color: gray;
+    border-collapse: initial;
+    font-size: small;
+    overflow-x: scroll;
+  }
+  .table tbody tr:nth-of-type(even) {
+    background-color: #f4f4f4;
+  }
+  .table td,
+  .table th {
+    text-align: center;
+    border: 0.1rem solid #e4e4e4;
+    padding: 0.5rem;
+    background: #265cb0;
+    color: white;
+  }
+  .table button {
+    margin: 0.1rem 0.2rem;
+    width: 75px;
+    background: #183b71;
+    border-color: #183b71 #132f5a #1e4a8d;
+    color: white;
+  }
+}

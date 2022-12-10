@@ -1,0 +1,55 @@
+.shipping__container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  margin-left: 50px !important;
+  margin-right: 50px !important;
+}
+
+.form__shipping {
+  max-width: 30rem;
+  width: 100%;
+  padding-top: 75px;
+  margin: 0 auto;
+}
+.form__shipping > div {
+  display: flex;
+  flex-direction: column;
+  margin: 1rem;
+}
+.form__shipping label {
+  margin: 10px 0;
+}
+.form__shipping input {
+  font-size: 1rem;
+  height: 25px;
+}
+.btn__cont {
+  background: #265cb0;
+  padding: 10px;
+  color: white;
+}
+
+.btn__cont:hover {
+  background: #1e4a8d;
+  color: white;
+  padding: 10px;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 480px) {
+  .shipping__container {
+    height: 125vh;
+    overflow-y: scroll;
+    display: flex;
+    flex-direction: column;
+    margin-left: 50px !important;
+    margin-right: 50px !important;
+  }
+  .form__shipping {
+    max-width: 30rem;
+    width: 100%;
+    padding-top: 5px;
+    margin: 0 auto;
+  }
+}

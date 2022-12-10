@@ -1,0 +1,31 @@
+.user__list {
+  min-height: 100vh;
+  margin-left: 200px;
+  margin-right: 200px;
+  overflow-y: scroll;
+}
+.user__list--container {
+  margin-top: 50px;
+}
+
+.user__list--title {
+  margin-bottom: 20px;
+}
+
+@media screen and (max-width: 480px) {
+  .user__list {
+    min-height: 100vh;
+    margin-left: 4px;
+    margin-right: 0;
+    overflow-y: scroll;
+    width: 400px;
+    background-color: white;
+  }
+  .user__list--container {
+    margin-top: 50px;
+  }
+
+  .user__list--title {
+    margin-bottom: 20px;
+  }
+}

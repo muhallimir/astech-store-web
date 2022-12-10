@@ -1,0 +1,107 @@
+.chatbox {
+  color: #fff;
+  z-index: 200;
+  position: fixed;
+  border-radius: 1rem;
+  padding: 0.4rem;
+  right: 5rem;
+  bottom: 5rem;
+  cursor: pointer;
+  background: rgb(2, 0, 36);
+  background: linear-gradient(
+    90deg,
+    rgba(2, 0, 36, 1) 0%,
+    rgba(9, 9, 121, 1) 35%,
+    rgba(0, 212, 255, 1) 100%
+  );
+  /* background: hsla(186, 100%, 69%, 1);
+
+  background: linear-gradient(
+    90deg,
+    hsla(186, 100%, 69%, 1) 0%,
+    hsla(217, 100%, 50%, 1) 100%
+  );
+
+  background: -moz-linear-gradient(
+    90deg,
+    hsla(186, 100%, 69%, 1) 0%,
+    hsla(217, 100%, 50%, 1) 100%
+  );
+
+  background: -webkit-linear-gradient(
+    90deg,
+    hsla(186, 100%, 69%, 1) 0%,
+    hsla(217, 100%, 50%, 1) 100%
+  );
+
+  filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#60EFFF", endColorstr="#0061FF", GradientType=1 ); */
+}
+.chatbox img {
+  height: 3rem;
+  width: 3.5rem;
+  border-radius: 10rem;
+  border: 1px solid #183b71;
+}
+
+.chatbox__body {
+  display: flex;
+  flex-direction: column;
+}
+
+.chatbox__body .chatbox__body-row {
+  display: flex;
+  gap: 10rem;
+}
+
+.chatbox__body .chatbox__body-row .chatbox__title {
+  font-size: larger;
+  font-weight: 500;
+  margin-left: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.chatbox__body .chatbox__body-row .chatbox__close button {
+  color: #183b71;
+  font-size: 1rem;
+}
+
+.chatbox ul {
+  overflow: scroll;
+  max-height: 35rem;
+}
+.chatbox li {
+  margin-bottom: 1rem;
+}
+
+.chatbox__form {
+  margin-left: 1rem;
+  margin-bottom: 0.5rem;
+}
+.chatbox input {
+  width: calc(100% - 4rem);
+  border: 1px solid #183b71;
+}
+
+/* Ipad Air view */
+@media screen and (max-width: 1024px) {
+  .chatbox {
+    bottom: 20rem;
+    right: 1rem;
+  }
+}
+
+/* Ipad mini view */
+@media screen and (max-width: 768px) {
+  .chatbox {
+    bottom: 10rem;
+    right: 1rem;
+  }
+}
+
+/* mobile view */
+@media screen and (max-width: 480px) {
+  .chatbox {
+    bottom: 3rem;
+    right: 0.5rem;
+  }
+}

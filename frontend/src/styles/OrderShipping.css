@@ -1,0 +1,41 @@
+.check__ship {
+  margin-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.checkout-steps > div {
+  border-top: 0.3rem #c0c0c0 solid;
+  color: #c0c0c0;
+  flex: 1;
+  padding: 1rem;
+  font-weight: bold;
+}
+.checkout-steps > div.active {
+  border-top-color: #1e4a8d;
+  color: #1e4a8d;
+}
+
+@media screen and (max-width: 480px) {
+  .check__ship {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    font-size: xx-small;
+  }
+
+  .checkout-steps > div {
+    border-top: 0.3rem #c0c0c0 solid;
+    color: #c0c0c0;
+    flex: 1;
+    padding: 1rem;
+    font-weight: bold;
+  }
+  .checkout-steps > div.active {
+    border-top-color: #1e4a8d;
+    color: #1e4a8d;
+  }
+}

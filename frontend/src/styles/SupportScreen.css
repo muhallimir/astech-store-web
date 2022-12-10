@@ -1,0 +1,119 @@
+.supportScreen__container {
+  display: flex;
+  height: 100vh;
+  width: 100%;
+  background: #f0f0f0;
+}
+
+.supportScreen__users {
+  background-color: #132f5a;
+  margin-bottom: 5rem;
+  height: 100%;
+}
+.supportScreen__users li {
+  color: #fff;
+  font-weight: 600;
+}
+.supportScreen__users button {
+  color: #fff;
+  font-size: larger;
+  background-color: transparent;
+  border-radius: 1rem;
+  border: 1px solid #132f5a;
+  text-align: left;
+  cursor: pointer;
+}
+.supportScreen__users li button {
+  margin-top: 1rem;
+  color: #fff;
+  border-bottom: 0.1rem #c0c0c0 solid;
+}
+
+.supportScreen__users li button:hover {
+  color: #766a81;
+}
+.supportScreen__users li.selected {
+  font-size: x-large;
+}
+
+.supportScreen__messages {
+  background-color: #fff;
+  height: 100%;
+  width: 100%;
+  overflow-y: scroll;
+}
+
+.supportScreen__messages h3 {
+  margin-top: 1rem;
+  margin-left: 2rem;
+  margin-bottom: 1rem;
+}
+.supportScreen__messages input {
+  margin-left: 3rem;
+  font-size: 1rem;
+  width: calc(100% - 15rem);
+}
+
+.supportScreen__messages button {
+  font-size: 1rem;
+  margin-left: 5px;
+}
+.supportScreen__messages ul {
+  height: calc(100vh - 18rem);
+  max-height: calc(100vh - 18rem);
+  overflow: scroll;
+}
+.supportScreen__messages li {
+  margin-bottom: 1rem;
+}
+
+.supportScreen__users span {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  position: absolute;
+  margin-left: -5px;
+  margin-top: 15px;
+}
+.supportScreen__users .offline {
+  height: 18px;
+  width: 18px;
+  background-color: #808080;
+}
+.supportScreen__users .online {
+  height: 18px;
+  width: 18px;
+  background-color: #20a020;
+}
+.supportScreen__users .unread {
+  height: 18px;
+  width: 18px;
+  background-color: #f02020;
+}
+
+/* mobile view */
+@media screen and (max-width: 768px) {
+  .supportScreen__users {
+    margin-bottom: 3rem;
+  }
+  .supportScreen__users li {
+    color: #fff;
+    font-weight: 600;
+  }
+  .supportScreen__users button {
+    margin-left: -2rem;
+
+    font-size: smaller;
+  }
+  .supportScreen__messages {
+    width: 100%;
+    padding-right: 2rem;
+  }
+
+  .supportScreen__messages input {
+    margin-top: 5rem;
+    margin-left: 1rem;
+    font-size: 1rem;
+    width: calc(100% - 5rem);
+  }
+}

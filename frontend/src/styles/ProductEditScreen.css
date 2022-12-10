@@ -1,0 +1,46 @@
+.productEdit__container {
+  height: 100vh;
+  width: 100%;
+  overflow-y: scroll;
+}
+
+.form__edit {
+  max-width: 30rem;
+  width: 100%;
+  padding-top: 25px;
+  margin: 0 auto;
+}
+.form__edit--title {
+  font-size: large;
+}
+
+.form__edit > div {
+  display: flex;
+  flex-direction: column;
+  margin: 1rem;
+}
+.form__edit label {
+  margin: 10px 0;
+}
+.form__edit input {
+  font-size: 1.5rem;
+}
+.form__edit textarea {
+  font-size: 1rem;
+  width: 100%;
+  max-width: 442px;
+  height: 100%;
+  max-height: 1500px;
+}
+.productEdit__btn {
+  background: #265cb0;
+  padding: 10px;
+  color: white;
+}
+
+.productEdit__btn:hover {
+  background: #1e4a8d;
+  color: white;
+  padding: 10px;
+  cursor: pointer;
+}
