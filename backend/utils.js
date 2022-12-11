@@ -1,5 +1,5 @@
 import jwt from "jsonwebtoken";
-import mg from "mailgun-js";
+// import mg from "mailgun-js";
 
 export const generateToken = (user) => {
   return jwt.sign(
@@ -47,11 +47,11 @@ export const isAdmin = (req, res, next) => {
   }
 };
 
-export const mailgun = () =>
-  mg({
-    apiKey: process.env.MAILGUN_API_KEY,
-    domain: process.env.MAILGUN_DOMAIN,
-  });
+// export const mailgun = () =>
+//   mg({
+//     apiKey: process.env.MAILGUN_API_KEY,
+//     domain: process.env.MAILGUN_DOMAIN,
+//   });
 
 export const payOrderEmailTemplate = (order) => {
   return `<h1>Thanks for shopping with us</h1>
@@ -68,16 +68,16 @@ export const payOrderEmailTemplate = (order) => {
   </thead>
   <tbody>
   ${order.orderItems
-    .map(
-      (item) => `
+      .map(
+        (item) => `
     <tr>
     <td>${item.name}</td>
     <td align="center">${item.qty}</td>
     <td align="right"> $${item.price.toFixed(2)}</td>
     </tr>
   `
-    )
-    .join("\n")}
+      )
+      .join("\n")}
   </tbody>
   <tfoot>
   <tr>
