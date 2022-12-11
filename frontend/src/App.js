@@ -22,7 +22,6 @@ import OrderListScreen from "./Screens/OrderListScreen";
 import UserListScreen from "./Screens/UserListScreen";
 import UserEditScreen from "./Screens/UserEditScreen";
 import SearchScreen from "./Screens/SearchScreen";
-import MapScreen from "./Screens/MapScreen";
 import DashboardScreen from "./Screens/DashboardScreen";
 import SupportScreen from "./Screens/SupportScreen";
 
@@ -38,11 +37,6 @@ function App() {
             exact
             path="/profile"
             component={ProfileScreen}
-          ></CustomerRoute>
-          <CustomerRoute
-            path="/map"
-            component={MapScreen}
-            exact
           ></CustomerRoute>
           <AdminRoute
             path="/orderlist"

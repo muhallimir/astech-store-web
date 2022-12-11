@@ -25,11 +25,11 @@
     "npm": "7.17.0"
   },
   "scripts": {
-    "build": "cd frontend && npm install && npm run build",
-    "start": "nodemon --watch backend --exec node --experimental-modules backend/server.js"
+    "build": "cd frontend && yarn install && yarn run build",
+    "start": "node backend/server.js"
   },
   "author": "Amirsali <mir23wpurposes@gmail.com>",
   "license": "ISC",
   "description": "Astech-etore backend",
-  "repository": "https://github.com/Amirsali/astech-estore.git"
+  "repository": "https://github.com/Amirsali/astech-estore-heroku-backup"
 }
