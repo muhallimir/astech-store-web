@@ -25,7 +25,7 @@
     "npm": "7.17.0"
   },
   "scripts": {
-    "build": "cd frontend && yarn install && yarn run build",
+    "build": "cd backend && yarn install  && cd ../frontend && yarn install && yarn run build",
     "start": "node backend/server.js"
   },
   "author": "Amirsali <mir23wpurposes@gmail.com>",
