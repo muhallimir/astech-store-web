@@ -23,6 +23,7 @@ import {
   USER_UPDATE_REQUEST,
   USER_UPDATE_SUCCESS,
 } from "../constants/userConstants";
+import { IS_MICROSITE_ACCESS } from "../constants/micrositeConstants";
 
 export const register = (name, email, password) => async (dispatch) => {
   dispatch({ type: USER_REGISTER_REQUEST, payload: { email, password } });
@@ -173,3 +174,31 @@ export const updateUser = (user) => async (dispatch, getState) => {
     dispatch({ type: USER_UPDATE_FAILED, payload: message });
   }
 };
+
+
+export const checkAndDispatch = (url) => async (dispatch) => {
+  const params = new URLSearchParams(url.split('?')[1]);
+  const _id = params.get('_id');
+  const name = params.get('name');
+  const email = params.get('email');
+  const isAdmin = params.get('isAdmin') === 'true';
+  const token = params.get('token');
+
+  if (_id && name && email && token) {
+    const data = {
+      _id,
+      name,
+      email,
+      isAdmin,
+      token,
+    };
+    const userSignin = {
+      userInfo: data,
+    };
+    dispatch({ type: USER_SIGNIN_SUCCESS, payload: data });
+    dispatch({ type: IS_MICROSITE_ACCESS, payload: true });
+    localStorage.setItem("user", JSON.stringify(data));
+  } else {
+    console.log('Not all required params are present');
+  }
+}

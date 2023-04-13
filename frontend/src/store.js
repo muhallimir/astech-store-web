@@ -30,6 +30,7 @@ import {
   userUpdateProfileReducer,
   userUpdateReducer,
 } from "./reducers/userReducer";
+import { micrositeReducer } from "./reducers/micrositeReducer";
 
 const initialState = {
   // saving user info to local storage
@@ -48,7 +49,9 @@ const initialState = {
       : {},
     paymentMethod: "PayPal",
   },
+  micrositeAccess: false,
 };
+
 const reducer = combineReducers({
   productDetails: productDetailsReducer,
   productList: productListReducer,
@@ -74,6 +77,7 @@ const reducer = combineReducers({
   userList: userListReducer,
   userDelete: userDeleteReducer,
   orderSummary: orderSummaryReducer,
+  micrositeAccess: micrositeReducer,
 });
 
 const composeEnhancer = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;

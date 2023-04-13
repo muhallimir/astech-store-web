@@ -5,6 +5,20 @@
   background-color: #183b71;
 }
 
+.navbar__container_native {
+  display: flex;
+  align-items: center;
+  top: 0;
+  background-color: #183b71;
+  color: #ffffff;
+  padding: 3px;
+}
+
+.navbar__container_native > div {
+  flex: 1;
+  text-align: center;
+}
+
 .header {
   height: 50px;
   width: 100%;

@@ -11,18 +11,19 @@ import {
 } from "../constants/orderConstants";
 import Loading from "../components/Loading";
 import "../styles/OrderStatusScreen.css";
+import { checkAndDispatch } from "../actions/userActions";
 
 export default function OrderStatusScreen(props) {
   window.scrollTo(0, 0);
+  const url = window.location.href;
+  const withUrlParams = url.includes("?");
 
   const orderId = props.match.params.id;
   //   paypal 2
   const [sdkReady, setSdkReady] = useState(false);
   const orderDetails = useSelector((state) => state.orderDetails);
   const { order, loading, error } = orderDetails;
-
-  const userSignin = useSelector((state) => state.userSignin);
-  const { userInfo } = userSignin;
+  const { userInfo } = useSelector(({ userSignin }) => userSignin);
 
   const orderDeliver = useSelector((state) => state.orderDeliver);
   const {
@@ -63,6 +64,7 @@ export default function OrderStatusScreen(props) {
     ) {
       dispatch({ type: ORDER_PAYMENT_RESET });
       dispatch({ type: ORDER_DELIVER_RESET });
+      dispatch(checkAndDispatch(url));
       dispatch(detailsOrder(orderId));
     } else {
       if (!order.isPaid) {
@@ -138,31 +140,35 @@ export default function OrderStatusScreen(props) {
             <>
               <div className="order__order__items">
                 <h2>Order Items</h2>
-
                 {order.orderItems.map((item) => (
                   <div key={item.product}>
                     <div className="order__order__details2">
-                      {/* 1st column */}
                       <div className="order__order__details--groups">
                         <img
                           src={item.image}
                           alt={item.name}
                           className="order__order__details--image"
                         />
-                      </div>
-                      <div className="order__orderinfo__total">
-                        {/* 2nd column */}
-                        <div className="">
-                          <Link to={`/product/${item.product}`}>
-                            {item.name}
-                          </Link>
-                        </div>
 
-                        {/* 3th column */}
-                        <div>
+                        <div className="order__orderinfo__total">
+                          <div>
+                            {withUrlParams ? (
+                              <div>
+                                {item.name.length > 20
+                                  ? item.name.substring(0, 15) + "..."
+                                  : item.name}
+                              </div>
+                            ) : (
+                              <Link to={`/product/${item.product}`}>
+                                {item.name.length > 20
+                                  ? item.name.substring(0, 15) + "..."
+                                  : item.name}
+                              </Link>)}
+                          </div>
                           {item.qty} x ${item.price} = ${item.qty * item.price}
                         </div>
                       </div>
+
                     </div>
                   </div>
                 ))}
@@ -172,15 +178,11 @@ export default function OrderStatusScreen(props) {
         </div>
         <div className="order__column__paymentSide">
           <div className="">
-            <>
-              <h2>Order Summary</h2>
-            </>
-            <>
-              <div className="row">
-                <div>Items</div>
-                <div>${order.itemsPrice.toFixed(2)}</div>
-              </div>
-            </>
+            <h2>Order Summary</h2>
+            <div className="row">
+              <div>Items</div>
+              <div>${order.itemsPrice.toFixed(2)}</div>
+            </div>
             <>
               <div className="row">
                 <div>Shipping</div>
