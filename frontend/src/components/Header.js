@@ -12,16 +12,13 @@ import Loading from "./Loading";
 import MessageBox from "./MessageBox";
 import { prices, ratings } from "../utils";
 import RatingSide from "./RatingSide";
-import PropTypes from 'prop-types';
 import ArrowBackIcon from '@material-ui/icons/ArrowBack';
 
 
-function Header(props) {
+function Header() {
   // getting the  cart info
-  const cart = useSelector((state) => state.cart);
-  const { cartItems } = cart;
+  const { cart: { cartItems }, micrositeAccess } = useSelector((state) => state);
   const [sidebarOpen, setSidebarOpen] = useState(false);
-  const micrositeAccess = useSelector((state) => state.micrositeAccess);
   const url = window.location.href;
   const [orderId, setOrderId] = useState('');
 
@@ -302,15 +299,6 @@ function Header(props) {
       </div>
     );
 }
-
-
-Header.defaultProps = {
-  url: "",
-};
-
-Header.propTypes = {
-  url: PropTypes.string,
-};
 
 export default Header;
 

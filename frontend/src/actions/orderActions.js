@@ -33,14 +33,12 @@ export const createOrder = (order) => async (dispatch, getState) => {
     const {
       userSignin: { userInfo },
     } = getState();
-    // ajax request
     const { data } = await Axios.post("/api/orders", order, {
       headers: {
         Authorization: `Bearer ${userInfo.token}`,
       },
     });
     dispatch({ type: ORDER_CREATE_SUCCESS, payload: data.order });
-    // remove all items from cart
     dispatch({ type: CART_EMPTY });
     localStorage.removeItem("cartItems");
   } catch (error) {
@@ -60,7 +58,6 @@ export const detailsOrder = (orderId) => async (dispatch, getState) => {
     userSignin: { userInfo },
   } = getState();
   try {
-    // ajax request
     const { data } = await Axios.get(`/api/orders/${orderId}`, {
       headers: { Authorization: `Bearer ${userInfo.token}` || `Bearer ${localStorage.getItem('token')}` },
     });

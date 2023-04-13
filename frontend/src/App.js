@@ -27,11 +27,10 @@ import SupportScreen from "./Screens/SupportScreen";
 
 function App() {
   window.scrollTo(0, 0);
-  const url = window.location.href;
   return (
     <Router>
       <div className="App">
-        <Header url={url} />
+        <Header />
         <Switch>
           <CustomerRoute
             exact
@@ -97,7 +96,7 @@ function App() {
             exact
           ></Route>
         </Switch>
-        <Footer url={url} />
+        <Footer />
       </div>
     </Router>
   );

@@ -33,13 +33,11 @@ import {
 import { micrositeReducer } from "./reducers/micrositeReducer";
 
 const initialState = {
-  // saving user info to local storage
   userSignin: {
     userInfo: localStorage.getItem("userInfo")
       ? JSON.parse(localStorage.getItem("userInfo"))
       : null,
   },
-  // saving cart state to local storage
   cart: {
     cartItems: localStorage.getItem("cartItems")
       ? JSON.parse(localStorage.getItem("cartItems"))

@@ -3,14 +3,11 @@ import { useSelector } from "react-redux";
 import "../styles/Footer.css";
 import ChatBox from "./Chatbox";
 import Logo from "./Logo.png";
-import PropTypes from 'prop-types';
 
-function Footer({ url }) {
-  const userSignin = useSelector((state) => state.userSignin);
-  const { userInfo } = userSignin;
-  const withUrlParams = url.includes("?");
+function Footer() {
+  const { userSignin: { userInfo }, micrositeAccess } = useSelector((state) => state);
 
-  return withUrlParams ? null : (
+  return micrositeAccess ? null : (
     <div className="footer__container">
       <div className="footer__links">
         <div className="footer__links--wrapper">
@@ -76,13 +73,5 @@ function Footer({ url }) {
     </div>
   );
 }
-
-Footer.defaultProps = {
-  url: "",
-};
-
-Footer.propTypes = {
-  url: PropTypes.string,
-};
 
 export default Footer;
