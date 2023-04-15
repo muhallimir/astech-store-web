@@ -79,12 +79,14 @@ function Header() {
     return `/search/category/${filterCategory}/name/${filterName}/min/${filterMin}/max/${filterMax}/rating/${filterRating}/order/${sortOrder}`;
   };
 
+  const toOrderHistoryMobile = () => {
+    window?.ReactNativeWebView?.postMessage('goBack');
+  };
 
   return micrositeAccess ?
-    // use the arrow back icon
     (
       <div className="navbar__container_native">
-        <ArrowBackIcon style={{ padding: '5px 0px 3px 5px', color: '#fff' }} />
+        <ArrowBackIcon className='arrow-back-icon' style={{ padding: '5px 0px 3px 5px', color: '#fff' }} onClick={toOrderHistoryMobile} />
         <div>Order ID: {orderId}</div>
       </div>
     )

@@ -14,6 +14,14 @@
   padding: 3px;
 }
 
+.arrow-back-icon {
+  transition: all 0.2s ease-in-out;
+}
+
+.arrow-back-icon:active {
+  transform: scale(0.9);
+}
+
 .navbar__container_native > div {
   flex: 1;
   text-align: center;
