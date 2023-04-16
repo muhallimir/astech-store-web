@@ -10,15 +10,13 @@ import { ORDER_CREATE_RESET } from "../constants/orderConstants";
 import "../styles/PlaceOrderScreen.css";
 
 export default function PlaceOrderScreen(props) {
+  const dispatch = useDispatch();
   window.scrollTo(0, 0);
   const [email, setEmail] = useState("");
   const userSignin = useSelector((state) => state.userSignin);
   const { userInfo } = userSignin;
   const userDetails = useSelector((state) => state.userDetails);
   const { user } = userDetails;
-  const userUpdateProfile = useSelector((state) => state.userUpdateProfile);
-
-  const dispatch = useDispatch();
 
   useEffect(() => {
     if (!user) {
@@ -27,8 +25,6 @@ export default function PlaceOrderScreen(props) {
       setEmail(user.email);
     }
   }, [dispatch, userInfo._id, user]);
-
-  console.log("User is >>>", user);
 
   const cart = useSelector((state) => state.cart);
 
